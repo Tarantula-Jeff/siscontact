@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Page</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <style>
+  
+    /* Animations */
+    .fade-in {
+        animation: fadeIn 2s ease-in-out;
+    }
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    .slide-in {
+        animation: slideIn 1.5s ease-out;
+    }
+    @keyframes slideIn {
+        from {
+            transform: translateY(-50px);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    .pulse {
+        animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+        0%, 100% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.1);
+        }
+    }
+</style>
+
+
+  
+</head>
+<body class="bg-black text-white font-sans">
+  <!-- Navbar -->
+  <header class="flex justify-between items-center py-4 px-8 bg-black text-white">
+    <div class="logo-container slide-in">
+      <img src="./pic/CYRILPHONOTS LOGO-modified.png" alt="Cyril Photos Logo" class="w-16 h-16 object-contain pulse">
+  </div>
+    <nav class="space-x-8 text-lg font-medium">
+      <a href="#portfolio" class="hover:text-yellow-400">Portfolio</a>
+      <a href="#about" class="hover:text-yellow-400">About</a>
+      <a href="#contact" class="hover:text-yellow-400">Contact</a>
+    </nav>
+    <div class="flex space-x-4">
+      <a href="https://www.facebook.com/share/184zfjj9mw/?mibextid=LQQJ4d" target="_blank" class="text-xl hover:text-blue-500">
+          <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="https://instagram.com/__cyrilphotos?igshid=NTc4MTIwNjQ2YQ==https://instagram.com/your-page" target="_blank" class="text-xl hover:text-pink-500">
+          <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://wa.me/+233543591986" target="_blank" class="text-xl hover:text-green-500">
+          <i class="fab fa-whatsapp"></i>
+      </a>
+  </div>
+  
+  </header>
+
+  <!-- Contact Section -->
+  <section id="contact" class="min-h-screen flex flex-col justify-center items-center px-8">
+    <div class="flex flex-col lg:flex-row justify-between items-start w-full max-w-6xl">
+      <!-- Contact Info -->
+      <div class="w-full lg:w-1/2 mb-10 lg:mb-0">
+        <h2 class="text-5xl font-bold mb-4">Contact</h2>
+        <p class="text-lg mb-4">Cyril Photos is represented by United Creatives</p>
+        <p class="text-lg mb-2">Email: <a href="mailto:info@mysite.com" class="hover:text-yellow-400">info@mysite.com</a></p>
+        <p class="text-lg mb-6">Phone: <a href="tel:123-456-7890" class="hover:text-yellow-400">123-456-7890</a></p>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="w-full lg:w-1/2">
+        <form id="contactForm" action="/api/send-email" method="POST" class="space-y-4">
+            <div class="flex space-x-4">
+              <input type="text" name="firstName" placeholder="First Name *" required
+                class="w-1/2 p-3 text-black border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400">
+              <input type="text" name="lastName" placeholder="Last Name *" required
+                class="w-1/2 p-3 text-black border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400">
+            </div>
+            <input type="email" name="email" placeholder="Email *" required
+              class="w-full p-3 text-black border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400">
+            <input type="text" name="phone" placeholder="Phone"
+              class="w-full p-3 text-black border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400">
+            <textarea name="message" rows="4" placeholder="Leave us a message..." required
+              class="w-full p-3 text-black border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400"></textarea>
+            <button type="submit"
+              class="w-full py-3 bg-yellow-400 text-black font-bold rounded-md hover:bg-yellow-500 focus:outline-none focus:ring-2 focus:ring-yellow-400">
+              Submit
+            </button>
+          </form>          
+      </div>
+    </div>
+  </section>
+</body>
+</html>
