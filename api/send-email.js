@@ -19,7 +19,7 @@ export default async function handler(req, res) {
 
     // Configure the email
     const mailOptions = {
-      from: email,
+      from: `"Cyril Photos" <cyrillisk889@gmail.com>`,
       to: process.env.RECEIVER_EMAIL, // Receiver's email
       subject: "New Contact Form Submission",
       text: `
