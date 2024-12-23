@@ -23,6 +23,9 @@ export default async function handler(req, res) {
       to: process.env.RECEIVER_EMAIL, // Receiver's email
       subject: "New Contact Form Submission",
       text: `
+                BOOKING MESSAGE
+      -------------------------------------
+      
         Name: ${firstName} ${lastName}
         Email: ${email}
         Phone: ${phone || "Not provided"}
