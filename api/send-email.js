@@ -37,7 +37,7 @@ export default async function handler(req, res) {
     await transporter.sendMail(mailOptions);
 
     // Redirect to success page on successful email
-    return res.redirect(303, "/success.html"); // 303 ensures the browser performs a GET request to the success page
+    return res.redirect(303, "https://github.com/Tarantula-Jeff/Cyril-Photos/blob/main/improved%20fold/success.html"); // 303 ensures the browser performs a GET request to the success page
   } catch (error) {
     console.error("Email Error:", error);
     return res.status(500).send({ message: "Email could not be sent", error });
