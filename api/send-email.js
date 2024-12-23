@@ -19,7 +19,7 @@ export default async function handler(req, res) {
 
     // Configure the email
     const mailOptions = {
-      from: `"Cyril Photos" <cyrillisk889@gmail.com>`,
+      from: `"Cyril Photos" <${process.env.EMAIL_USER}>`,
       to: process.env.RECEIVER_EMAIL, // Receiver's email
       subject: "New Contact Form Submission",
       text: `
@@ -33,9 +33,10 @@ export default async function handler(req, res) {
     // Send the email
     await transporter.sendMail(mailOptions);
 
-    return res.status(200).send({ message: "Email sent successfully" });
+    // Redirect to success page on successful email
+    return res.redirect(303, "/success.html"); // 303 ensures the browser performs a GET request to the success page
   } catch (error) {
-    console.error(error);
+    console.error("Email Error:", error);
     return res.status(500).send({ message: "Email could not be sent", error });
   }
 }
