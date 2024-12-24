@@ -21,7 +21,7 @@ export default async function handler(req, res) {
     const mailOptions = {
       from: `"Cyril Photos" <${process.env.EMAIL_USER}>`,
       to: process.env.RECEIVER_EMAIL, // Receiver's email
-      subject: "New Contact Form Submission",
+      subject: "CYRIL-Frames Connect",
       text: `
                 BOOKING MESSAGE
       -------------------------------------
